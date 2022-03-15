@@ -7,7 +7,8 @@ IP = socket.gethostbyname(socket.gethostname())
 PORT = 5555
 ADDR = (IP, PORT)
 SIZE = 1024
-key = 'aáàạảãăắằặẳẵâấầậẩẫbcdđeéẹẻẽêếềệểễfghiíìịỉĩjklmnoóòọỏõôốồộổỗơớờợởỡpqrstuúùụủũưứừựửữvwxyýỳỵỷỹAÁÀẠẢÃĂẮẰẶẲẴÂẤẦẬẨẪBCDĐEÉẸẺẼÊẾỀỆỂỄFGHIÍÌỊỈĨJKLMNOÓÒỌỎÕÔỐỒỘỔỖƠỚỜỢỞỠPQRSTUÚÙỤỦŨƯỨỪỰỬỮVWXYÝỲỴỶỸ0123456789`[emailprotected]#$%^&*()'
+# key = 'aáàạảãăắằặẳẵâấầậẩẫbcdđeéẹẻẽêếềệểễfghiíìịỉĩjklmnoóòọỏõôốồộổỗơớờợởỡpqrstuúùụủũưứừựửữvwxyýỳỵỷỹAÁÀẠẢÃĂẮẰẶẲẴÂẤẦẬẨẪBCDĐEÉẸẺẼÊẾỀỆỂỄFGHIÍÌỊỈĨJKLMNOÓÒỌỎÕÔỐỒỘỔỖƠỚỜỢỞỠPQRSTUÚÙỤỦŨƯỨỪỰỬỮVWXYÝỲỴỶỸ0123456789`[emailprotected]#$%^&*()'
+key = 'abcdefghiklmnopqrstuvwxyz'
 
 
 def decrypt(k, ciphertext):
@@ -29,7 +30,7 @@ def handle_client(conn, addr):
     data = conn.recv(SIZE)
     str_data = data.decode(FORMAT)
     k = 5
-    print(str_data)
+    print("Chuỗi mã hoá" + str_data)
     mess_decrypt = decrypt(k, str_data)
     print("Tin nhắn nhận được: " + mess_decrypt)
 

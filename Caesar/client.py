@@ -7,7 +7,9 @@ PORT = 5555
 ADDR = (IP, PORT)
 FORMAT = "utf-8"
 SIZE = 1024
-key = 'aáàạảãăắằặẳẵâấầậẩẫbcdđeéẹẻẽêếềệểễfghiíìịỉĩjklmnoóòọỏõôốồộổỗơớờợởỡpqrstuúùụủũưứừựửữvwxyýỳỵỷỹAÁÀẠẢÃĂẮẰẶẲẴÂẤẦẬẨẪBCDĐEÉẸẺẼÊẾỀỆỂỄFGHIÍÌỊỈĨJKLMNOÓÒỌỎÕÔỐỒỘỔỖƠỚỜỢỞỠPQRSTUÚÙỤỦŨƯỨỪỰỬỮVWXYÝỲỴỶỸ0123456789`[emailprotected]#$%^&*()'
+# key = 'aáàạảãăắằặẳẵâấầậẩẫbcdđeéẹẻẽêếềệểễfghiíìịỉĩjklmnoóòọỏõôốồộổỗơớờợởỡpqrstuúùụủũưứừựửữvwxyýỳỵỷỹAÁÀẠẢÃĂẮẰẶẲẴÂẤẦẬẨẪBCDĐEÉẸẺẼÊẾỀỆỂỄFGHIÍÌỊỈĨJKLMNOÓÒỌỎÕÔỐỒỘỔỖƠỚỜỢỞỠPQRSTUÚÙỤỦŨƯỨỪỰỬỮVWXYÝỲỴỶỸ0123456789`[emailprotected]#$%^&*()'
+
+key = 'abcdefghiklmnopqrstuvwxyz'
 
 
 def encrypt(k, plaintext):
@@ -32,7 +34,6 @@ def main():
     mess_encry = encrypt(k, message)
 
     client.sendall(bytes(mess_encry, FORMAT))
-    client.sendall(k)
 
 
 if __name__ == "__main__":
